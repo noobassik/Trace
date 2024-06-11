@@ -12,29 +12,29 @@ public class Main {
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setSize(650, 800);
 
-            GameBoard gameBoard = new GameBoard(20, 20, 20);  // Увеличиваем размеры до 20x20 и уменьшаем размер шестиугольников
+            GameBoard gameBoard = new GameBoard(20, 20, 20);
             Player player = new Player(0, 0, Color.BLUE);
             List<Key> keys = generateKeys();
 
             gameBoard.addPlayer(player);
             gameBoard.addKeys(keys);
-            gameBoard.setTargetHex(1, 10);  // Устанавливаем целевой шестиугольник в нижнем правом углу
+            gameBoard.setTargetHex(1, 10);
 
             frame.add(gameBoard);
             frame.addKeyListener(new KeyAdapter() {
                 @Override
                 public void keyPressed(KeyEvent e) {
                     switch (e.getKeyCode()) {
-                        case KeyEvent.VK_W:
+                        case KeyEvent.VK_UP:
                             player.move(0, -1, gameBoard);
                             break;
-                        case KeyEvent.VK_S:
+                        case KeyEvent.VK_DOWN:
                             player.move(0, 1, gameBoard);
                             break;
-                        case KeyEvent.VK_A:
+                        case KeyEvent.VK_LEFT:
                             player.move(-1, 0, gameBoard);
                             break;
-                        case KeyEvent.VK_D:
+                        case KeyEvent.VK_RIGHT:
                             player.move(1, 0, gameBoard);
                             break;
                     }

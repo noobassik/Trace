@@ -90,8 +90,9 @@ public class GameBoard extends JPanel {
         for (Key key : keys) {
             int keyX = (int) (key.getX() * hexSize * 3 / 2 + hexSize / 2);
             int keyY = (int) (key.getY() * hexSize * Math.sqrt(3) + (key.getX() % 2) * hexSize * Math.sqrt(3) / 2 + hexSize / 2);
-            g.setColor(Color.YELLOW);
-            g.fillOval(keyX, keyY, 10, 10); // Adjust the position of the key
+            g.setColor(Color.green);
+            g.fillOval(keyX, keyY, 20, 20); // Adjust the position of the key
+
         }
 
         // Draw player
